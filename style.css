@@ -1,0 +1,82 @@
+/* Custom Styles for DigitalOcean Status Page */
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background:#292f36
+}
+
+/* Page container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Page title */
+h1 {
+    color: #0c0c0c;
+}
+
+/* Filter radio buttons styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+/* Search box styles */
+.search-box-container {
+    margin-bottom: 20px;
+}
+
+.search-box {
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Status card styles */
+.card {
+    margin-bottom: 20px;
+}
+
+.card-header {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.card-body {
+    background-color: #fff;
+}
+
+/* Loading message styles */
+#loading-message {
+    color: #007bff;
+}
+
+/* Search button styles */
+.btn-search {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+}
+
+/* Hover effect for search button */
+.btn-search:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive styles */
+@media (max-width: 576px) {
+    .form-group label {
+        display: block;
+        margin-bottom: 10px;
+    }
+}

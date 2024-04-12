@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigitalOcean Status</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+   
+</head>
+<body>
+<div class="container mt-5">
+    <h1 class="text-center mb-4">DigitalOcean Status</h1>
+
+    <!-- Filter radio buttons -->
+    <div class="form-group">
+        <label class="mr-3"><input type="radio" name="filter" value="summary" checked> Summary</label>
+        <label class="mr-3"><input type="radio" name="filter" value="incidents"> Incidents</label>
+        <label><input type="radio" name="filter" value="maintenance"> Scheduled Maintenance</label>
+    </div>
+
+    <!-- Search box -->
+    <div class="search-box-container">
+        <div class="input-group search-box">
+            <input type="text" id="search-box" class="form-control" placeholder="Enter Your Search Term">
+            <div class="input-group-append">
+                <button class="btn btn-search" type="button" id="search-button"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <div id="loading-message" class="text-center mb-3" style="display: none;">
+        <p>Please wait while data is fetched...</p>
+    </div>
+
+    <!-- Container for status cards -->
+    <div class="row" id="status-container"></div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="script.js"></script>
+<script>
+    // Show messages on filter buttons
+    document.addEventListener('DOMContentLoaded', function () {
+        const filterRadios = document.querySelectorAll('input[name="filter"]');
+
+        filterRadios.forEach(radio => {
+            radio.addEventListener('change', function () {
+                let message = '';
+                switch (this.value) {
+                    case 'summary':
+                        message = 'Displaying summary data.';
+                        break;
+                    case 'incidents':
+                        message = 'Displaying incident data.';
+                        break;
+                    case 'maintenance':
+                        message = 'Displaying scheduled maintenance data.';
+                        break;
+                }
+                alert(message);
+            });
+        });
+    });
+
+   
+   // Add event listener for the search button and search icon to trigger search
+document.getElementById('search-button').addEventListener('click', handleSearch);
+document.getElementById('search-icon').addEventListener('click', function () {
+    // Clear the search box
+    document.getElementById('search-box').value = '';
+    // Trigger search
+    handleSearch();
+});
+
+// Add event listener for search input to trigger search on Enter key press
+document.getElementById('search-box').addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        // Clear the search box
+        document.getElementById('search-box').value = '';
+        // Trigger search
+        handleSearch();
+    }
+});
+
+</script>
+</body>
+</html>
