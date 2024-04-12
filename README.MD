@@ -46,5 +46,5 @@ Bootstrap and Font Awesome greatly contribute to the styling and visual appeal o
 ## License
 This project is licensed under the MIT License. Refer to the LICENSE file for more information.
 
-
+## Copyright ©Mikewainaina Project 2024  
 
