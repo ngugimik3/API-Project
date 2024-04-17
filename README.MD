@@ -22,8 +22,6 @@ Git clone https://github.com/mikewaina/Triangle-tracker.git
 
 # Live Link
 http://127.0.0.1:5500/
-## Domain link
-api-project-tau-roan.vercel.app
 
 
 ## Technologies used
